@@ -99,47 +99,42 @@ def sentiment_total(review):
 
 #script, filename = argv
 
-def reddit_scrape(query):
-
-	d = feedparser.parse(query)
-
-	for e in d.entries:
-
-		tokenizer = Tokenizer()
-		postagger = POSTagger()
-		tagger = DictionaryTagger(['positive.yml', 'tier1.yml', 'tier2.yml', 'tier3.yml', 'tier4.yml'])
-
-		raw_title = unicode.encode(e.title, "utf-8")
-		raw_description = unicode.encode(e.description, "utf-8")
-		#pubdate = unicode.encode(e.published, "utf-8")
-
-		dsoup = BeautifulSoup(raw_description)
-
-		description = dsoup.p
-		title = dsoup.h1
-
-		full = str(title) + str(description)
-		final = full.replace('<p>', '').replace('</p>', '').replace('<h1>', '').replace('</h1>', ':').replace('<em>', '').replace('<br/>', '')
-	#print final
-		tokens = tokenizer.split(final)
-		pos = postagger.pos_tag(tokens)
-		tagged = tagger.tag(pos)
-		total = '%r' % sentiment_total(tagged)
-
-		target.write(final)
-		target.write('|')
-		target.write(total)
-		target.write('\n')
+d = feedparser.parse('http://metareddit.com/monitor/TmuuY/cunt.rss')
 
 print "Opening the file."
 
-filename = 'reddit_nigger.txt'
+filename = 'reddit_cunt.txt'
 target = open(filename, 'a')
 
-reddit_scrape('http://metareddit.com/monitor/Bjqv2/nigger.rss')
-reddit_scrape('http://metareddit.com/monitor/2QyJb/nigga.rss')
+for e in d.entries:
+
+	tokenizer = Tokenizer()
+	postagger = POSTagger()
+	tagger = DictionaryTagger(['positive.yml', 'tier1.yml', 'tier2.yml', 'tier3.yml', 'tier4.yml'])
+
+	raw_title = unicode.encode(e.title, "utf-8")
+	raw_description = unicode.encode(e.description, "utf-8")
+	#pubdate = unicode.encode(e.published, "utf-8")
+
+	dsoup = BeautifulSoup(raw_description)
+
+	description = dsoup.p
+	title = dsoup.h1
+
+	full = str(title) + str(description)
+	final = full.replace('<p>', '').replace('</p>', '').replace('<h1>', '').replace('</h1>', ':').replace('<em>', '').replace('<br/>', '')
+	#print final
+	tokens = tokenizer.split(final)
+	pos = postagger.pos_tag(tokens)
+	tagged = tagger.tag(pos)
+	total = '%r' % sentiment_total(tagged)
+
+	target.write(final)
+	target.write('|')
+	target.write(total)
+	target.write('\n')
+
 
 target.write('\n')
-
 print "All done!"
 

@@ -81,11 +81,15 @@ class DictionaryTagger(object):
 
 def value(sentiment):
 	if sentiment == 'first': 
-		return 1
+		return 0.5
 	elif sentiment == 'second':
+		return 1
+	elif sentiment == 'third':
+		return 1.5
+	elif sentiment == 'fourth':
 		return 2
 	elif sentiment == 'positive':
-		return -1
+		return -1.5
 	else:
 		return 0
 
@@ -94,14 +98,14 @@ def sentiment_total(review):
 
 print "Opening the file..."
 
-filename = 'twitter_faggot_taggingtest319_multiple.txt'
+filename = 'twitter_faggot_taggingtest324_3.txt'
 target = open(filename, 'a')
 
 def searchTweets(query):
 
 	tokenizer = Tokenizer()
 	postagger = POSTagger()
-	tagger = DictionaryTagger(['positive.yml', 'tier2.yml', 'test1.yml', 'test2.yml'])
+	tagger = DictionaryTagger(['positive.yml', 'tier1.yml', 'tier2.yml', 'tier3.yml', 'tier4.yml'])
 
 	search = urllib.urlopen("http://search.twitter.com/search.json?q="+query)
 	dict = json.loads(search.read())
@@ -111,7 +115,7 @@ def searchTweets(query):
 		tokens = tokenizer.split(new_tweet)
 		pos = postagger.pos_tag(tokens)
 		tagged = tagger.tag(pos)
-		total = '%d' % sentiment_total(tagged)
+		total = '%r' % sentiment_total(tagged)
 		#print new_tweet
 		#print pos
 		#print tagged
@@ -123,6 +127,6 @@ def searchTweets(query):
 		target.write('\n')
 
 # we will search tweets about whatever the query is
-searchTweets("faggot&rpp=200")
+searchTweets("faggot+OR+fag+OR+faggots+OR+fags&rpp=200")
 
 print "All done!"

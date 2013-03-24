@@ -114,6 +114,7 @@ def youtube_scrape(query, j):
     tagger = DictionaryTagger(['positive.yml', 'tier3.yml', 'tier2.yml', 'tier1.yml', 'tier4.yml'])
     ### Open page & generate soup
     ### the "start" variable will be used to iterate through 10 pages.
+
     for start in range(0,j):
         url = query + str(start*10)
         page = opener.open(url)
@@ -138,10 +139,12 @@ def youtube_scrape(query, j):
 
 print "Opening the file..."
 
-filename = 'youtube_faggot.txt'
+filename = 'youtube_nigger.txt'
 target = open(filename, 'a')
 
-youtube_scrape('http://www.google.com/search?q=faggot+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 2)
-youtube_scrape('http://www.google.com/search?q=fag+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 2)
+youtube_scrape('http://www.google.com/search?q=nigger+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 2)
+youtube_scrape('http://www.google.com/search?q=nigga+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 2)
+youtube_scrape('http://www.google.com/search?q=niggah+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 1)
+youtube_scrape('http://www.google.com/search?q=nig+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 1)
 
 print "All done!"

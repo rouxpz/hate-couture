@@ -133,13 +133,11 @@ def reddit_scrape(query):
 
 print "Opening the file."
 
-filename = 'reddit_nigger.txt'
+filename = 'reddit_faggot.txt'
 target = open(filename, 'a')
 
-reddit_scrape('http://metareddit.com/monitor/Bjqv2/nigger.rss')
-reddit_scrape('http://metareddit.com/monitor/2QyJb/nigga.rss')
+reddit_scrape('http://metareddit.com/monitor/uP6WU/faggot.rss')
 
 target.write('\n')
-
 print "All done!"
 

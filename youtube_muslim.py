@@ -138,10 +138,14 @@ def youtube_scrape(query, j):
 
 print "Opening the file..."
 
-filename = 'youtube_faggot.txt'
+filename = 'youtube_muslim.txt'
 target = open(filename, 'a')
 
-youtube_scrape('http://www.google.com/search?q=faggot+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 2)
-youtube_scrape('http://www.google.com/search?q=fag+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 2)
+youtube_scrape('http://www.google.com/search?q=raghead+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 1)
+youtube_scrape('http://www.google.com/search?q=towelhead+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 1)
+youtube_scrape('http://www.google.com/search?q="sand monkey"+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 1)
+youtube_scrape('http://www.google.com/search?q=sandmonkey+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 1)
+youtube_scrape('http://www.google.com/search?q="sand nigger"+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 1)
+youtube_scrape('http://www.google.com/search?q=sandnigger+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 1)
 
 print "All done!"
