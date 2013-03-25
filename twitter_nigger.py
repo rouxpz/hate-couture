@@ -98,7 +98,7 @@ def sentiment_total(review):
 
 print "Opening the file..."
 
-filename = 'twitter_nigger_taggingtest324_3.txt'
+filename = 'twitter_nigger.txt'
 target = open(filename, 'a')
 
 def searchTweets(query):
@@ -115,7 +115,7 @@ def searchTweets(query):
 		tokens = tokenizer.split(new_tweet)
 		pos = postagger.pos_tag(tokens)
 		tagged = tagger.tag(pos)
-		total = '%d' % sentiment_total(tagged)
+		total = '%r' % sentiment_total(tagged)
 		#print new_tweet
 		#print pos
 		#print tagged
@@ -127,6 +127,7 @@ def searchTweets(query):
 		target.write('\n')
 
 # we will search tweets about whatever the query is
-searchTweets("nigger+OR+nigga+OR+nig+OR+niggah+OR+niggers+OR+niggas+OR+nigs+OR+niggahs&rpp=200")
+searchTweets("nigger+OR+niggers&rpp=200")
+target.write('\n')
 
 print "All done!"

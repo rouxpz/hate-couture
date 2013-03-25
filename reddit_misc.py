@@ -1,7 +1,8 @@
-#!/usr/bin/env python
+#!/usr/local/bin/python
 
-import urllib
-import json
+import feedparser
+import nltk
+from bs4 import BeautifulSoup
 import nltk
 import yaml
 
@@ -96,37 +97,49 @@ def value(sentiment):
 def sentiment_total(review):
 	return sum([value(tag) for sentence in review for token in sentence for tag in token[2]])
 
-print "Opening the file..."
+#script, filename = argv
 
-filename = 'twitter_muslim.txt'
-target = open(filename, 'a')
+def reddit_scrape(query):
 
-def searchTweets(query):
+	d = feedparser.parse(query)
 
-	tokenizer = Tokenizer()
-	postagger = POSTagger()
-	tagger = DictionaryTagger(['positive.yml', 'tier1.yml', 'tier2.yml', 'tier3.yml', 'tier4.yml'])
+	for e in d.entries:
 
-	search = urllib.urlopen("http://search.twitter.com/search.json?q="+query)
-	dict = json.loads(search.read())
-	for result in dict["results"]: # result is a list of dictionaries
-		new_tweet = unicode.encode(result["text"], "utf-8")
-		#print type(new_tweet)
-		tokens = tokenizer.split(new_tweet)
+		tokenizer = Tokenizer()
+		postagger = POSTagger()
+		tagger = DictionaryTagger(['positive.yml', 'tier1.yml', 'tier2.yml', 'tier3.yml', 'tier4.yml'])
+
+		raw_title = unicode.encode(e.title, "utf-8")
+		raw_description = unicode.encode(e.description, "utf-8")
+		#pubdate = unicode.encode(e.published, "utf-8")
+
+		dsoup = BeautifulSoup(raw_description)
+
+		description = dsoup.p
+		title = dsoup.h1
+
+		full = str(title) + str(description)
+		final = full.replace('<p>', '').replace('</p>', '').replace('<h1>', '').replace('</h1>', ':').replace('<em>', '').replace('<br/>', '')
+	#print final
+		tokens = tokenizer.split(final)
 		pos = postagger.pos_tag(tokens)
 		tagged = tagger.tag(pos)
 		total = '%r' % sentiment_total(tagged)
-		#print new_tweet
-		#print pos
-		#print tagged
-		#print ('\n')
-		#print new_tweet
-		target.write(new_tweet)
+
+		target.write(final)
 		target.write('|')
 		target.write(total)
 		target.write('\n')
 
-# we will search tweets about whatever the query is
-searchTweets('raghead+OR+towelhead+OR+ragheads+OR+towelheads+OR+"sand+monkey"+OR+"sand+nigger"+OR+"sand+monkeys"+OR+"sand+niggers"+OR+sandnigger+OR+sandniggers+OR+sandmonkeys&rpp=200')
+print "Opening the file."
+
+filename = 'reddit_faggot.txt'
+target = open(filename, 'a')
+
+reddit_scrape('http://metareddit.com/monitor/gzoD0/fags.rss')
 target.write('\n')
+reddit_scrape('http://metareddit.com/monitor/S44U1/niggah.rss')
+target.write('\n')
+
 print "All done!"
+

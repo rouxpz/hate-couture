@@ -98,7 +98,7 @@ def sentiment_total(review):
 
 print "Opening the file..."
 
-filename = 'twitter_faggot_taggingtest324_3.txt'
+filename = 'twitter_faggot.txt'
 target = open(filename, 'a')
 
 def searchTweets(query):
@@ -128,5 +128,6 @@ def searchTweets(query):
 
 # we will search tweets about whatever the query is
 searchTweets("faggot+OR+fag+OR+faggots+OR+fags&rpp=200")
+target.write('\n')
 
 print "All done!"

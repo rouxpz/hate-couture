@@ -98,7 +98,7 @@ def sentiment_total(review):
 
 print "Opening the file..."
 
-filename = 'twitter_muslim.txt'
+filename = 'twitter_nigga.txt'
 target = open(filename, 'a')
 
 def searchTweets(query):
@@ -127,6 +127,7 @@ def searchTweets(query):
 		target.write('\n')
 
 # we will search tweets about whatever the query is
-searchTweets('raghead+OR+towelhead+OR+ragheads+OR+towelheads+OR+"sand+monkey"+OR+"sand+nigger"+OR+"sand+monkeys"+OR+"sand+niggers"+OR+sandnigger+OR+sandniggers+OR+sandmonkeys&rpp=200')
+searchTweets("nigga+OR+niggas+OR+niggah+OR+niggahs+OR+nig+OR+nigs&rpp=200")
 target.write('\n')
+
 print "All done!"

@@ -128,5 +128,6 @@ def searchTweets(query):
 
 # we will search tweets about whatever the query is
 searchTweets('cunt+OR+cunts&rpp=200')
+target.write('\n')
 
 print "All done!"
