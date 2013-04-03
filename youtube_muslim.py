@@ -1,4 +1,4 @@
-#!/usr/local/bin python
+#!/usr/local/bin/python
 
 #"Hate Couture", thesis project at ITP-NYU
 #this script scrapes youtube comment results from google and analyzes them according to a custom sentiment analysis library.
@@ -143,10 +143,12 @@ target = open(filename, 'a')
 
 youtube_scrape('http://www.google.com/search?q=raghead+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 1)
 youtube_scrape('http://www.google.com/search?q=towelhead+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 1)
-youtube_scrape('http://www.google.com/search?q="sand monkey"+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 1)
+#youtube_scrape('http://www.google.com/search?q="sand monkey"+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 1)
 youtube_scrape('http://www.google.com/search?q=sandmonkey+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 1)
-youtube_scrape('http://www.google.com/search?q="sand nigger"+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 1)
+#youtube_scrape('http://www.google.com/search?q="sand nigger"+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 1)
 youtube_scrape('http://www.google.com/search?q=sandnigger+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 1)
+#youtube_scrape('http://www.google.com/search?q="rag head"+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 1)
+#youtube_scrape('http://www.google.com/search?q="towel head"+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 1)
 target.write('\n')
 
 print "All done!"

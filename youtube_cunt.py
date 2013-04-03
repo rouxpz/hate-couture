@@ -1,4 +1,4 @@
-#!/usr/local/bin python
+#!/usr/local/bin/python
 
 #"Hate Couture", thesis project at ITP-NYU
 #this script scrapes youtube comment results from google and analyzes them according to a custom sentiment analysis library.

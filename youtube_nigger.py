@@ -1,4 +1,4 @@
-#!/usr/local/bin python
+#!/usr/local/bin/python
 
 #"Hate Couture", thesis project at ITP-NYU
 #this script scrapes youtube comment results from google and analyzes them according to a custom sentiment analysis library.
@@ -142,10 +142,10 @@ print "Opening the file..."
 filename = 'youtube_nigger.txt'
 target = open(filename, 'a')
 
-youtube_scrape('http://www.google.com/search?q=nigger+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 2)
-youtube_scrape('http://www.google.com/search?q=nigga+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 2)
+youtube_scrape('http://www.google.com/search?q=nigger+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 1)
+youtube_scrape('http://www.google.com/search?q=nigga+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 4)
 youtube_scrape('http://www.google.com/search?q=niggah+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 1)
-youtube_scrape('http://www.google.com/search?q=nig+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 1)
+#youtube_scrape('http://www.google.com/search?q=nig+site:youtube.com/all_comments&hl=en&authuser=0&biw=1532&bih=745&tbs=sbd:1,qdr:d&filter=0&start=', 1)
 target.write('\n')
 
 print "All done!"
