@@ -96,10 +96,10 @@ def value(sentiment):
 def sentiment_total(review):
 	return sum([value(tag) for sentence in review for token in sentence for tag in token[2]])
 
-print "Opening the file..."
+#print "Opening the file..."
 
 filename = 'twitter_faggot.txt'
-target = open(filename, 'a')
+#target = open(filename, 'a')
 
 def searchTweets(query):
 
@@ -116,18 +116,18 @@ def searchTweets(query):
 		pos = postagger.pos_tag(tokens)
 		tagged = tagger.tag(pos)
 		total = '%r' % sentiment_total(tagged)
-		#print new_tweet
-		#print pos
-		#print tagged
+		print new_tweet, '|', total
+		#print '|'
+		#print total
 		#print ('\n')
 		#print new_tweet
-		target.write(new_tweet)
-		target.write('|')
-		target.write(total)
-		target.write('\n')
+		#target.write(new_tweet)
+		#target.write('|')
+		#target.write(total)
+		#target.write('\n')
 
 # we will search tweets about whatever the query is
 searchTweets("faggot+OR+fag+OR+faggots+OR+fags&rpp=200")
-target.write('\n')
+#target.write('\n')
 
-print "All done!"
+#print "All done!"

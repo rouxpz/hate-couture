@@ -22,7 +22,7 @@ int makeBigger = 2;
 void setup() {
   size(round(actualw*makeBigger), round(actualh*makeBigger));
   
-  beginRecord(PDF, "test1.pdf");
+  //beginRecord(PDF, "test1.pdf");
   
   cloth = loadImage("faggot-fabric.png");
   
@@ -34,7 +34,7 @@ void setup() {
   for (Speech sp:scores) {
     for (Pixels pi:squares) {
       if (sp.id == pi.id) {
-        //println(sp.score);
+        println(sp.score);
         write(sp.assign);
         noStroke();
         TColor shade = TColor.newHSV(h, s, b);
@@ -62,9 +62,9 @@ void loadData() {
       s.id = i;
       s.score = float(lines[0]);
       
-      if(s.score <= 2) {
+      if(s.score <= 2.5) {
         s.assign = 0;
-      } else if (s.score > 2 && s.score <= 6) {
+      } else if (s.score > 2.5 && s.score <= 6) {
         s.assign = 1;
       } else if (s.score > 6 && s.score <= 10) {
         s.assign = 2;
@@ -134,6 +134,6 @@ void write(int level) {
 
 //saves PDF
 void keyPressed() {
-  endRecord();
+  //endRecord();
 }
 
